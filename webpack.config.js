@@ -5,6 +5,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var utils = require('./utils')
 //var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     devtool: '#source-map',
@@ -18,9 +19,9 @@ module.exports = {
         filename: 'static/js/[name].js',
         chunkFilename: 'static/js/[id].chunk.js',
         path: path.join(__dirname, 'dist'),
-
+        //publicPath 上线替换真实的http,如果设置为/则需把dist下的文件放在项目的根目录
         //publicPath:'http://localhost:3000/'
-        //publicPath:'./dist/'
+        publicPath:'/'
     },
     module: {
         rules: [
@@ -50,26 +51,21 @@ module.exports = {
                 loader: "html-loader?attrs=img:src img:data-src"
             },
             {
-                //打包字体文件，譬如bootstrap的fonts
-                test:/\.(woff|woff2|svg|eot|ttf)\??.*$/,
-                loader: 'file-loader',
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
                 options: {
-                    name: 'static/fonts/[name].[ext]'
+                    limit:10000,
+                    name:utils.assetsPath('img/[name].[hash:7].[ext]')
                 }
             },
-            //处理在css中引入图片路径的问题
             {
-                test:/\.(png|jpg|gif)$/,
-                loader:'file-loader',
-                options:{
-                    name:'../../static/img/[name].[ext]'
+                test:/\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: utils.assetsPath('fonts/[name].[ext]')
                 }
-            }
-         /*   {
-                test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]'
-            }*/
-
+            }           
         ]
     },
     plugins: [
