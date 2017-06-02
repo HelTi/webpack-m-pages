@@ -148,7 +148,7 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
     if(typeof module !=='undefined' && typeof exports ==='object'){
         module.exports=mtable;
     }else if(typeof define ==='function' && (define.amd || define.cmd)){
-        define(function(){
+        define([jQuery],function(){
             return mtable;
         })
     }else{

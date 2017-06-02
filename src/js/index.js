@@ -7,4 +7,4 @@ console.log('indexjs')
 
 var $=require('jquery')
 
-$('body').css('background-color','green')
+$('body').css('background-color','pink')
