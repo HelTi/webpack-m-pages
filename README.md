@@ -120,6 +120,9 @@ module.exports = {
     }
 }
 ```
-#### npm install
-#### webpack
-#### webpack-dev-server
+#### 安装依赖
+> npm install
+#### 打包
+> webpack
+#### 启动服务
+> webpack-dev-server
