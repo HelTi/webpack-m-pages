@@ -111,12 +111,11 @@ module.exports = {
     ],
     //方便开发使用，浏览器输入：http://localhost:3000访问
     devServer:{
-        contentBase:path.join(__dirname,"dist"),
+        contentBase:'./',
         host:'localhost',
         compress:true,
         port:3000,
-        inline:true,
-        hot:true
+        inline:true
     }
 }
 ```
