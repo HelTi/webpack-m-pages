@@ -12,7 +12,7 @@ module.exports = {
     devtool: '#source-map',
     entry: entry_files,
     output: {
-        filename: 'static/js/[name].js',
+        filename: 'static/js/[name][hash].js',
         chunkFilename: 'static/js/[id].chunk.js',
         path: path.join(__dirname, 'dist'),
         //publicPath 上线替换真实的http,如果设置为/则需把dist下的文件放在项目的根目录
@@ -69,46 +69,7 @@ module.exports = {
             }           
         ]
     },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendors",
-            chunks: ["pageA", "pageB", "pageC"],//提取公用模块
-            minChunks: Infinity
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/pages/index.html",
-            filename: 'index.html',
-            chunks: ['vendors', 'index'],
-            // hash:true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: false //删除空白符与换行符
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/pages/pageA.html",
-            filename: 'pageA.html',
-            chunks: ['vendors', 'pageA'],
-            hash: true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: false //删除空白符与换行符
-            }
-        }),
-        new ExtractTextPlugin({
-            //生成css文件名
-            filename: 'static/css/[name].css',
-            disable: false,
-            allChunks: true
-        }),
-        //webpack自带的js压缩插件
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-        /* new UglifyJSPlugin()*/
-    ],
+    plugins: require('./base.plugin'),
     //方便开发使用，浏览器输入：http://localhost:3000访问
     devServer:{
         contentBase:'./',

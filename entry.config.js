@@ -10,7 +10,6 @@ function each_file(dir) {
             var file_path = dir + '/' + file;
             var fname = path.basename(file, '.js');
             entry_files[fname]=file_path;
-            console.log(fname)
         })
     } catch (e) {
 

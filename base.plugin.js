@@ -5,31 +5,13 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+//html页面 pagesArray
+var pagesArray =require('./pagesArray');
 let base_plugin = [
     new webpack.optimize.CommonsChunkPlugin({
         name: "vendors",
         chunks: ["pageA", "pageB", "pageC"],//提取公用模块
         minChunks: Infinity
-    }),
-    new HtmlWebpackPlugin({
-        template: "./src/index.html",
-        filename: 'index.html',
-        chunks: ['vendors', 'index'],
-        // hash:true,
-        minify: {
-            removeComments: true,
-            collapseWhitespace: false //删除空白符与换行符
-        }
-    }),
-    new HtmlWebpackPlugin({
-        template: "./src/pageA.html",
-        filename: 'pageA.html',
-        chunks: ['vendors', 'pageA'],
-        hash: true,
-        minify: {
-            removeComments: true,
-            collapseWhitespace: false //删除空白符与换行符
-        }
     }),
     new ExtractTextPlugin({
         //生成css文件名
@@ -45,3 +27,20 @@ let base_plugin = [
     })
     /* new UglifyJSPlugin()*/
 ]
+/*遍历页面，添加配置*/
+pagesArray.forEach((page)=>{
+    const htmlPlugin = new HtmlWebpackPlugin({
+        template: page.template,
+        filename: page.filename,
+        chunks: ['vendors', page.chuckName],
+        // hash:true,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: false //删除空白符与换行符
+        }
+    });
+
+    base_plugin.push(htmlPlugin)
+})
+
+module.exports = base_plugin;

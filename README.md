@@ -1,127 +1,116 @@
 #基于webpack的多页脚手架
-> 这个完全基于webpack的配置，适用于一些官网产品类介绍的静态网页。由于webpack的强大，可以使用scss,es6，并实现代码压缩，css压缩
+> 这个完全基于webpack的配置，适用于一些官网产品类介绍的静态网页。可以使用scss,es6，并实现代码压缩，css压缩
 
-```javascript
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var utils = require('./utils')
-//var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-module.exports = {
-    devtool: '#source-map',
-    entry: {
-        pageA: './src/js/pageA.js',
-        pageB: './src/js/pageB.js',
-        pageC: './src/js/pageC.js',
-        index: './src/js/index.js'
-    },
-    output: {
-        filename: 'static/js/[name].js',
-        chunkFilename: 'static/js/[id].chunk.js',
-        path: path.join(__dirname, 'dist'),
-        //publicPath 上线替换真实的http,如果设置为/则需把dist下的文件放在项目的根目录
-        //publicPath:'http://localhost:3000/'
-        publicPath:'/'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use:[
-                        {
-                            loader: 'css-loader',
-                            options:{
-                                minimize: true //css压缩
-                            }
-                        }
-                    ]
-                })
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                })
-            },
-            {
-                test: /\.html$/,
-                loader: "html-loader?attrs=img:src img:data-src"
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit:10000,
-                    name:utils.assetsPath('img/[name].[hash:7].[ext]')
-                }
-            },
-            {
-                test:/\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: utils.assetsPath('fonts/[name].[ext]')
-                }
-            }           
-        ]
-    },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendors",
-            chunks: ["pageA", "pageB", "pageC"],//提取公用模块
-            minChunks: Infinity
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/index.html",
-            filename: 'index.html',
-            chunks: ['vendors', 'index'],
-            // hash:true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: false //删除空白符与换行符
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/pageA.html",
-            filename: 'pageA.html',
-            chunks: ['vendors', 'pageA'],
-            hash: true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: false //删除空白符与换行符
-            }
-        }),
-        new ExtractTextPlugin({
-            //生成css文件名
-            filename: 'static/css/[name].css',
-            disable: false,
-            allChunks: true
-        }),
-        //webpack自带的js压缩插件
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-        /* new UglifyJSPlugin()*/
-    ],
-    //方便开发使用，浏览器输入：http://localhost:3000访问
-    devServer:{
-        contentBase:'./',
-        host:'localhost',
-        compress:true,
-        port:3000,
-        inline:true
-    }
-}
+## 功能完成
+ 功能  
+- css压缩，scss编译
+- js压缩
+- 动态读取入口配置文件
+- 动态设置HtmlWebpackPlugin实现多页打包配置
+
+
+## 目录结构说明
+```
+│  .babelrc
+│  .gitignore
+│  a.txt
+│  base.plugin.js //动态生成HtmlWebpackPlugin
+│  entry.config.js//读取多页入口文件
+│  package.json
+│  pagesArray.js //获取多页文件，HtmlWebpackPlugin的参数
+│  README.md
+│  utils.js  //生产环境与开发环境
+│  webpack.config.js
+│  
+└─src
+    ├─common //公用样式
+    │  ├─css
+    │  │      reset.css
+    │  │      
+    │  └─js  //公用js
+    │          common.js
+    │          easyTable.js
+    │          
+    ├─css
+    │  │  bootstrap.css
+    │  │  index.css
+    │  │  
+    │  ├─pageA
+    │  │      a.css
+    │  │      as.scss
+    │  │      
+    │  ├─pageB
+    │  │      b.css
+    │  │      bb.scss
+    │  │      
+    │  └─pageC
+    │          c.css
+    │          
+    ├─fonts
+    │      glyphicons-halflings-regular.eot
+    │      glyphicons-halflings-regular.svg
+    │      glyphicons-halflings-regular.ttf
+    │      glyphicons-halflings-regular.woff
+    │      glyphicons-halflings-regular.woff2
+    │      
+    ├─img
+    │      ph.jpg
+    │      
+    ├─js
+        │      index.js
+        │      mod.js
+        │      pageA.js
+        │      pageB.js
+        │      pageC.js
+        │      testm.js
+        │      
+        ├─lib
+        │      easyTable.js
+        │      mod.js
+        │      
+        └─pages
+                index.html
+                pageA.html
+                pageB.html
+                pageC.html
+```
+## 打包后的目录
+```
+│  index.html
+│  pageA.html
+│  pageB.html
+│  pageC.html
+│  
+└─static
+    ├─css
+    │      index.css
+    │      index.css.map
+    │      pageA.css
+    │      pageA.css.map
+    │      
+    ├─fonts
+    │      glyphicons-halflings-regular.eot
+    │      glyphicons-halflings-regular.ttf
+    │      glyphicons-halflings-regular.woff
+    │      glyphicons-halflings-regular.woff2
+    │      
+    ├─img
+    │      glyphicons-halflings-regular.f721466.svg
+    │      ph.50e1eb2.jpg
+    │      
+    └─js
+            indexa94351a6f2b24f4c647a.js
+            moda94351a6f2b24f4c647a.js
+            pageAa94351a6f2b24f4c647a.js
+            pageBa94351a6f2b24f4c647a.js
+            pageCa94351a6f2b24f4c647a.js
+            testma94351a6f2b24f4c647a.js
+            vendorsa94351a6f2b24f4c647a.js
+            
 ```
 #### 安装依赖
 > npm install
 #### 打包
-> webpack
+> npm run build
 #### 启动服务
-> webpack-dev-server
+> npm run dev
