@@ -3,8 +3,9 @@
  */
 require("../css/bootstrap.css")
 require("../css/index.css")
+import mod from '../lib/mod';
 console.log('indexjs')
-
+mod();
 var $=require('jquery')
 
 $('body').css('background-color','pink')

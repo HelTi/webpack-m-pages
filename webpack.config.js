@@ -7,14 +7,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var utils = require('./utils')
 //var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var entry_files=require('./entry.config');
 module.exports = {
     devtool: '#source-map',
-    entry: {
-        pageA: './src/js/pageA.js',
-        pageB: './src/js/pageB.js',
-        pageC: './src/js/pageC.js',
-        index: './src/js/index.js'
-    },
+    entry: entry_files,
     output: {
         filename: 'static/js/[name].js',
         chunkFilename: 'static/js/[id].chunk.js',
@@ -25,6 +21,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader'
+            },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -75,7 +76,7 @@ module.exports = {
             minChunks: Infinity
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
+            template: "./src/pages/index.html",
             filename: 'index.html',
             chunks: ['vendors', 'index'],
             // hash:true,
@@ -85,7 +86,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            template: "./src/pageA.html",
+            template: "./src/pages/pageA.html",
             filename: 'pageA.html',
             chunks: ['vendors', 'pageA'],
             hash: true,
