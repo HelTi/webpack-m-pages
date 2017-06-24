@@ -7,7 +7,7 @@
 - js压缩
 - 动态读取入口配置文件
 - 动态设置HtmlWebpackPlugin实现多页打包配置
-- 启动webpack-dev-server
+- 启动webpack-dev-server（自动刷新）
 
 ## 目录结构说明
 ```
