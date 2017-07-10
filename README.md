@@ -114,3 +114,7 @@
 > npm run build
 #### 启动服务
 > npm run start
+>启动服务后访问
+http://localhost:3000/index.html
+http://localhost:3000/pageA.html
+.....
