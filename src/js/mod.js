@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017/5/5 0005.
  */
+/*
 if(typeof module !=='undefined' && typeof exports ==='object'){
     var $=require('jquery');
 }else{
@@ -32,4 +33,4 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
     }
 }).call(function(){
     return (typeof window !=='undefined' ? window :global);
-},$)
+},$)*/

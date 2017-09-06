@@ -1,6 +1,7 @@
-/**
+/*
+/!**
  * Created by Administrator on 2017/5/5 0005.
- */
+ *!/
 
 var $=null;
 console.log('iswindow:'+typeof window)
@@ -42,4 +43,4 @@ function setup({dispatch}){
     window.onresize=function(){
         return dispatch({type:'changeNavbar'})
     }
-}
+}*/
