@@ -2,12 +2,12 @@
  * Created by Administrator on 2017/5/5 0005.
  */
 if(typeof module !=='undefined' && typeof exports ==='object'){
-    var $=require('jquery');
+    let $=require('jquery');
 }else{
-    var $=window.$
+    let $=window.$
 }
 ;(function(){
-    var mod=function(){
+    let mod=function(){
         console.log('my module');
         say();
         console.log($)

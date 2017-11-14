@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/5/5 0005.
  */
 
-var $=null;
+let $=null;
 console.log('iswindow:'+typeof window)
 if(typeof module !=='undefined' && typeof exports ==='object'){
     $=require('jquery');
@@ -10,7 +10,7 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
     $=window.$
 }
 ;(function(){
-    var mod=function(){
+    let mod=function(){
         console.log('my module');
         say();
         console.log($)

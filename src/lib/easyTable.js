@@ -1,13 +1,13 @@
 
 
 if(typeof module !=='undefined' && typeof exports ==='object'){
-    var $=require('jquery');
+    let $=require('jquery');
 }else{
-    var $=window.$
+    let $=window.$
 }
 (function(){
 
-    var mtable = function (opt, data) {
+    let mtable = function (opt, data) {
         this.tableId = opt.tableid;
         this.tableClass = opt.tableclass;
         this.tableParent = opt.tableparent;
@@ -29,7 +29,7 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
     mtable.prototype = {
         constructor: mtable,
         init: function () {
-            var that = this;
+            let that = this;
             that.createTable();
             //合并单元格
             if (this.mergeCells == true) {
@@ -40,15 +40,15 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
             return this;
         },
         createTr: function () {
-            var tr = document.createElement('tr');
+            let tr = document.createElement('tr');
             this.table.appendChild(tr);
         },
         createTd: function () {
 
         },
         createTable: function () {
-            var that = this;
-            var t = createTable({
+            let that = this;
+            let t = createTable({
                 id: that.tableId,
                 class: that.tableClass
             }, that.data, that.theade);
@@ -62,8 +62,8 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
 
         },
         addEventDom: function () {
-            var that = this;
-            //var tableObj=document.getElementById('m');
+            let that = this;
+            //let tableObj=document.getElementById('m');
             $(this.addDom).on('click', function () {
                 console.log("开始生产表格...")
                 that.createTable();
@@ -77,28 +77,28 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
     }
     //动态生成表格
     function createTable(attr, data, tableheade) {
-        var vtable = document.createElement("table");
-        var theade = document.createElement('tr');
+        let vtable = document.createElement("table");
+        let theade = document.createElement('tr');
         theade.innerHTML = tableheade;
         // vtable.appendChild(theade);
-        var tbody = document.createElement("tbody");
+        let tbody = document.createElement("tbody");
         tbody.appendChild(theade)
         if (attr.id != null) {
             vtable.setAttribute("id", attr.id);
         }
         //添加类
         if (attr.class != null) {
-            var classlist = attr.class.split(" ");
-            for (var c in classlist) {
+            let classlist = attr.class.split(" ");
+            for (let c in classlist) {
                 vtable.classList.add(classlist[c]);
             }
 
         }
         $.each(data, function (index, item) {
-            var tr = document.createElement("tr");
-            for (var i in item) {
+            let tr = document.createElement("tr");
+            for (let i in item) {
                 console.log(item)
-                var td = document.createElement("td");
+                let td = document.createElement("td");
                 td.innerHTML = item[i];
                 tr.appendChild(td);
             }
@@ -111,20 +111,20 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
     mtable.MergeCell = MergeCell;
     //合并单元格
     function MergeCell(tableId) {
-        var tab = document.getElementById(tableId);
-        var clen = tab.rows.item(0).cells.length;
-        var val, count, start;
-        for (var col = 0; col < clen; col++) {
+        let tab = document.getElementById(tableId);
+        let clen = tab.rows.item(0).cells.length;
+        let val, count, start;
+        for (let col = 0; col < clen; col++) {
             count = 1;
             val = "";
-            for (var i = 0; i < tab.rows.length; i++) {
+            for (let i = 0; i < tab.rows.length; i++) {
                 if (val == tab.rows[i].cells[col].innerHTML) {
                     count++;
                 } else {
                     if (count > 1) {
                         start = i - count;
                         tab.rows[start].cells[col].rowSpan = count;
-                        for (var j = start + 1; j < i; j++) {
+                        for (let j = start + 1; j < i; j++) {
                             tab.rows[j].cells[col].style.display = "none";
                         }
                         count = 1;
@@ -136,7 +136,7 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
             if (count > 1) {
                 start = i - count;
                 tab.rows[start].cells[col].rowSpan = count;
-                for (var j = start + 1; j < i; j++) {
+                for (let j = start + 1; j < i; j++) {
                     tab.rows[j].cells[col].style.display = "none";
                 }
             }

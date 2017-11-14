@@ -1,12 +1,12 @@
 /**
  * Created by Administrator on 2017/4/28 0028.
  */
-require("../css/pageA/a.css")
-require("../css/pageA/as.scss")
+require("../assets/css/pageA/a.css")
+require("../assets/css/pageA/as.scss")
 console.log('pagea');
-var mtable = require("../lib/easyTable.js");
-var _ = require('lodash');
-var data = [
+let mtable = require("../lib/easyTable.js");
+let _ = require('lodash');
+let data = [
     {'a': '小明', 'b': '100'},
     {'a': '小明', 'b': '250'},
     {'a': '小明', 'b': '260'},
@@ -23,7 +23,7 @@ new mtable({
     mergeCells: true
 }, data)
 
-var objArr=[
+let objArr=[
     {a:'aa'},
     {b:'bb'},
     {c:'cc'}
