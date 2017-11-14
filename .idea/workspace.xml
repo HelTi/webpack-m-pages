@@ -2,37 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70d7e9b-950d-4472-8625-c874f4622e3d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/base.plugin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/build.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/dev.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/entry.config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pagesArray.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/pageA/a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/pageA/as.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/pageB/b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/pageB/bb.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/pageC/c.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/ph.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utils.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.babelrc" afterPath="$PROJECT_DIR$/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/ph.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/awebpack.config.all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/pagesArray.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/base.plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/entry.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/getEntrys.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/index.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/pageA/a.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/pageA/as.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/pageB/b.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/pageB/bb.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/pageC/c.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/glyphicons-halflings-regular.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/js/common.js" afterPath="$PROJECT_DIR$/src/common/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/js/easyTable.js" afterPath="$PROJECT_DIR$/src/common/js/easyTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/index.js" afterPath="$PROJECT_DIR$/src/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/mod.js" afterPath="$PROJECT_DIR$/src/js/mod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/pageA.js" afterPath="$PROJECT_DIR$/src/js/pageA.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/testm.js" afterPath="$PROJECT_DIR$/src/js/testm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/easyTable.js" afterPath="$PROJECT_DIR$/src/lib/easyTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/index.html" afterPath="$PROJECT_DIR$/src/pages/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -115,7 +104,7 @@
           <file leaf-file-name="getEntrys.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/getEntrys.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="331">
+                <state relative-caret-position="437">
                   <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
                   <folding />
                 </state>
@@ -394,11 +383,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510624266539</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="切换到webpack3。。。">
+      <created>1510655268956</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1510655268956</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18296000" />
+    <option name="totallyTimeSpent" value="18610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -411,7 +407,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47551686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32100108" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -446,7 +442,8 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="...../注释readme" />
     <MESSAGE value="切换到webpack3" />
-    <option name="LAST_COMMIT_MESSAGE" value="切换到webpack3" />
+    <MESSAGE value="切换到webpack3。。。" />
+    <option name="LAST_COMMIT_MESSAGE" value="切换到webpack3。。。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -774,7 +771,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getEntrys.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
+        <state relative-caret-position="437">
           <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding />
         </state>
