@@ -6,6 +6,6 @@ import mod from '../lib/mod';
 require('../assets/css/index.scss')
 console.log('indexjs')
 mod();
-let $=require('jquery')
+let $=require('jquery');
 
 $('body').css('background-color','pink')

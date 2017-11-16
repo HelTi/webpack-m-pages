@@ -1,21 +1,19 @@
-const webpack = require('webpack'); // 用于访问内置插件
+const webpack = require('webpack'); //
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 通过 npm 安装
 const path = require('path');
 const utils = require('./config/utils')
 
-//获取所有入口文件
-const getEntrys = require('./getEntrys')();
-
-const entry_files = require('./config/entry.config');
-console.log(entry_files)
+//获取所有入口文件配置
+const entry_files = require('./config/entrys');
+//获取输出配置
+const base_plugin = require('./config/base.plugin');
 function resolve(dir) {
     return path.join(__dirname, '.', dir)
 }
 
 module.exports = {
-    devtool: '#source-map',
-    entry: getEntrys,
+    entry: entry_files,
     output: {
         filename: 'static/js/[name][hash].js',
         chunkFilename: 'static/js/[id].chunk.js',
@@ -72,7 +70,7 @@ module.exports = {
             }
         ]
     },
-    plugins: require('./config/base.plugin'),
+    plugins: base_plugin,
     devServer: {
         contentBase: './',
         host: 'localhost',
@@ -80,4 +78,4 @@ module.exports = {
         port: 3000,
         inline: true
     }
-}
+};

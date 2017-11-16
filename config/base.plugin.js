@@ -3,7 +3,7 @@ let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 //html页面 pagesArray
-let pagesArray =require('../build/pagesArray');
+let pagesArray =require('./htmlPages');
 let base_plugin = [
     new webpack.optimize.CommonsChunkPlugin({
         name: "vendors",
