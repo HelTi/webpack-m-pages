@@ -8,16 +8,20 @@ const utils = require('./config/utils')
 const entry_files = require('./config/entrys');
 //获取输出配置
 const base_plugin = require('./config/base.plugin');
+
 function resolve(dir) {
     return path.join(__dirname, '.', dir)
 }
 
 module.exports = {
+    devtool: '#source-map',
     entry: entry_files,
     output: {
         filename: 'static/js/[name][hash].js',
         chunkFilename: 'static/js/[id].chunk.js',
         path: path.join(__dirname, 'dist'),
+        //publicPath 上线替换真实的http,如果设置为/则需把dist下的文件放在项目的根目录
+        // publicPath:'http://localhost:3000/'
         publicPath: '/'
     },
     module: {
