@@ -1,10 +1,11 @@
 /**
  * Created by Administrator on 2017/4/28 0028.
  */
-
-require('../assets/css/index.scss')
+require("../css/bootstrap.css")
+require("../css/index.css")
+//import mod from '../lib/mod';
 console.log('indexjs')
-var $ = require('jquery')
+//mod();
+//var $=require('jquery')
 
-
-$('body').css('background-color','pink')
+//$('body').css('background-color','pink')

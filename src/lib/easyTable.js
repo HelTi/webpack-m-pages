@@ -1,3 +1,4 @@
+/*
 
 
 if(typeof module !=='undefined' && typeof exports ==='object'){
@@ -158,3 +159,4 @@ if(typeof module !=='undefined' && typeof exports ==='object'){
    return (typeof window !=='undefined' ? window : global )
 },$)
 
+*/
