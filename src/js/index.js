@@ -6,4 +6,5 @@ require('../assets/css/index.scss')
 console.log('indexjs')
 var $ = require('jquery')
 
+
 $('body').css('background-color','pink')
