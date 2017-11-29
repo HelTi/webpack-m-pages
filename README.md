@@ -2,7 +2,7 @@
 > 这个完全基于webpack的配置，适用于一些官网产品类介绍的静态网页。可以使用scss,es6，并实现代码压缩，css压缩
 >更新到webpack3
 - 不在动态的读取文件，webpack3报错，所以改为读取文件写入配置。这样就行了
-- 构建前，运行 node output生成配置文件 :-)
+> 注意：`构建前，运行 node output生成配置文件 :-)`,为了适配webpack3
 ## 功能完成
  功能  
 - css压缩，scss编译
@@ -117,6 +117,6 @@
 #### 启动服务
 > npm run start
 >启动服务后访问
-http://localhost:3000/index.html
-http://localhost:3000/pageA.html
-.....
+- http://localhost:3000/index.html
+- http://localhost:3000/pageA.html
+- .....
