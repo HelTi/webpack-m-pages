@@ -3,6 +3,8 @@
 >更新到webpack3
 - 不在动态的读取文件，webpack3报错，所以改为读取文件写入配置。这样就行了
 > 注意：`构建前，运行 node output生成配置文件 :-)`,为了适配webpack3
+
+# master分支不在更新，请移至webpack3分支
 ## 功能完成
  功能  
 - css压缩，scss编译
