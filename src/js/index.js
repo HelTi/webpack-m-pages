@@ -2,8 +2,8 @@
  * Created by Administrator on 2017/4/28 0028.
  */
 
-require('../assets/css/index.scss')
+import '../assets/css/index.scss'
 console.log('indexjs')
-var $ = require('jquery')
+import $ from 'jquery'
 
 $('body').css('background-color','pink')
