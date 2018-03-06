@@ -127,8 +127,7 @@
 
 
 <div>
-<p>     重要贡献者
+<p>贡献者
 <a  href="https://github.com/dengV"> 邓江洲 @ ZTO Express</a>
-
 </p>
 </div>
