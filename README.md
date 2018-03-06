@@ -128,6 +128,6 @@
 
 <div>
 <p>贡献者
-<a  href="https://github.com/dengV"> 邓江洲 @ ZTO Express</a>
+<a href="https://github.com/dengV"> 邓江洲 @ ZTO Express</a>
 </p>
 </div>
