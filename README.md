@@ -122,8 +122,3 @@
 - http://localhost:3000/index.html
 - http://localhost:3000/pageA.html
 - .....
-<div>
-<p>贡献者：
-<a href="https://github.com/dengV"> 邓江洲 @ ZTO Express</a>
-</p>
-</div>

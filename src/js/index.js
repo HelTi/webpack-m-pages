@@ -3,7 +3,6 @@
  */
 
 import '../assets/css/index.scss'
-console.log('indexjs')
 import $ from 'jquery'
 
 $('body').css('background-color','pink')

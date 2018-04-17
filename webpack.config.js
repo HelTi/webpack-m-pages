@@ -28,8 +28,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('src'), resolve('node_modules/webpack-dev-server/client')]
+        exclude: /node_modules/,
+        loader: "babel-loader"
       },
       {
         test: /\.css$/,
@@ -48,8 +48,20 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          fallback: "style-loader",
+          use: [{
+            loader: "css-loader",
+            options: {
+              minimize: true,
+              sourceMap: true
+            }
+          }, {
+            loader: "sass-loader",
+            options: {
+              outputStyle: 'compressed',
+              sourceMap: true
+            }
+          }]
         })
       },
       {
