@@ -19,7 +19,7 @@ function each_entry_file(dir) {
     }
 }
 each_entry_file('./src/js');
-let entrysStr = 'module.exports=' + JSON.stringify(entry_files);
+let entrysStr = 'module.exports=' + JSON.stringify(entry_files,null,4);
 fs.writeFile('./config/entrys.js', entrysStr, (err) => {
     if (err) throw err;
     console.log('done')
@@ -48,7 +48,7 @@ function each_file(dir) {
     }
 }
 each_file('./src/pages');
-let htmlsPluginStr = 'module.exports=' + JSON.stringify(pagesArray)
+let htmlsPluginStr = 'module.exports=' + JSON.stringify(pagesArray,null,4)
 fs.writeFile('./config/htmlPages.js', htmlsPluginStr, (err) => {
     if (err) throw err;
     console.log('done')
