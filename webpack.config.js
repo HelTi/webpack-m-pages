@@ -5,7 +5,7 @@ const path = require('path');
 const utils = require('./config/utils')
 
 //获取所有入口文件配置
-const entry_files = require('./config/entrys');
+const {entries} = require('./config/entrys');
 //获取输出配置
 const base_plugin = require('./config/base.plugin');
 
@@ -15,7 +15,7 @@ function resolve(dir) {
 
 module.exports = {
   devtool: '#source-map',
-  entry: entry_files,
+  entry: entries(),
   output: {
     filename: 'static/js/[name][hash].js',
     chunkFilename: 'static/js/[id].chunk.js',

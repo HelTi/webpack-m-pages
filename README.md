@@ -1,9 +1,9 @@
-# 基于webpack的多页脚手架 for webpack3
+## 基于webpack的多页脚手架 for webpack3
 > 这个完全基于webpack的配置，适用于一些官网产品类介绍的静态网页。可以使用scss,es6，并实现代码压缩，css压缩
 >更新到webpack3
 
-# master分支不在更新，请移至webpack3分支
-## 功能完成
+## master分支不在更新，请移至webpack3分支
+### 功能完成
  功能  
 - css压缩，scss编译
 - js压缩
@@ -11,103 +11,95 @@
 - 动态设置HtmlWebpackPlugin实现多页打包配置
 - 启动webpack-dev-server（自动刷新）
 
-## 目录结构说明
+### 页面配置规则
+> 保持html文件名与入口js文件名一致，使用glob模块，动态读取文件夹生成配置
+```
+    └─pages //页面配置目录
+        ├─index
+        │      index.html
+        │      index.js
+        │      
+        ├─pageA
+        │      pageA.html
+        │      pageA.js
+        │      
+        └─pageB
+                pageB.html
+                pageB.js
+```
+
+### 目录结构说明
 ```
 │  .babelrc
 │  .gitignore
-│  a.txt
-│  base.plugin.js //动态生成HtmlWebpackPlugin
-│  entry.config.js//读取多页入口文件
+│  .postcssrc.js
+│  getEntrys.js
+│  package-lock.json
 │  package.json
-│  pagesArray.js //获取多页文件，HtmlWebpackPlugin的参数
 │  README.md
-│  utils.js  //生产环境与开发环境
 │  webpack.config.js
 │  
+├─config
+│      base.plugin.js //包含动态生成HtmlWebpackPlugin
+│      entrys.js  //动态入口与HtmlWebpackPlugin动态生成
+│      utils.js
+│      
 └─src
-    ├─common //公用样式
+    ├─assets
+    │  ├─css
+    │  │  │  bootstrap.css
+    │  │  │  index.scss
+    │  │  │  
+    │  │  ├─pageA
+    │  │  │      a.css
+    │  │  │      as.scss
+    │  │  │      
+    │  │  ├─pageB
+    │  │  │      b.css
+    │  │  │      bb.scss
+    │  │  │      
+    │  │  └─pageC
+    │  │          c.css
+    │  │          
+    │  ├─fonts
+    │  │      glyphicons-halflings-regular.eot
+    │  │      glyphicons-halflings-regular.svg
+    │  │      glyphicons-halflings-regular.ttf
+    │  │      glyphicons-halflings-regular.woff
+    │  │      glyphicons-halflings-regular.woff2
+    │  │      
+    │  └─img
+    │          ph.jpg
+    │          
+    ├─common
     │  ├─css
     │  │      reset.css
     │  │      
-    │  └─js  //公用js
+    │  └─js
     │          common.js
-    │          easyTable.js
     │          
-    ├─css
-    │  │  bootstrap.css
-    │  │  index.css
-    │  │  
-    │  ├─pageA
-    │  │      a.css
-    │  │      as.scss
-    │  │      
-    │  ├─pageB
-    │  │      b.css
-    │  │      bb.scss
-    │  │      
-    │  └─pageC
-    │          c.css
-    │          
-    ├─fonts
-    │      glyphicons-halflings-regular.eot
-    │      glyphicons-halflings-regular.svg
-    │      glyphicons-halflings-regular.ttf
-    │      glyphicons-halflings-regular.woff
-    │      glyphicons-halflings-regular.woff2
-    │      
-    ├─img
-    │      ph.jpg
-    │      
     ├─js
+    │  │  testm.js
+    │  │  
+    │  └─other
+    │          a.js
+    │          b.js
+    │          
+    ├─lib
+    │      test.js
+    │      
+    └─pages //页面配置目录
+        ├─index
+        │      index.html
         │      index.js
-        │      mod.js
+        │      
+        ├─pageA
+        │      pageA.html
         │      pageA.js
-        │      pageB.js
-        │      pageC.js
-        │      testm.js
         │      
-        ├─lib
-        │      easyTable.js
-        │      mod.js
-        │      
-        └─pages
-                index.html
-                pageA.html
+        └─pageB
                 pageB.html
-                pageC.html
-```
-## 打包后的目录
-```
-│  index.html
-│  pageA.html
-│  pageB.html
-│  pageC.html
-│  
-└─static
-    ├─css
-    │      index.css
-    │      index.css.map
-    │      pageA.css
-    │      pageA.css.map
-    │      
-    ├─fonts
-    │      glyphicons-halflings-regular.eot
-    │      glyphicons-halflings-regular.ttf
-    │      glyphicons-halflings-regular.woff
-    │      glyphicons-halflings-regular.woff2
-    │      
-    ├─img
-    │      glyphicons-halflings-regular.f721466.svg
-    │      ph.50e1eb2.jpg
-    │      
-    └─js
-            indexa94351a6f2b24f4c647a.js
-            moda94351a6f2b24f4c647a.js
-            pageAa94351a6f2b24f4c647a.js
-            pageBa94351a6f2b24f4c647a.js
-            pageCa94351a6f2b24f4c647a.js
-            testma94351a6f2b24f4c647a.js
-            vendorsa94351a6f2b24f4c647a.js
+                pageB.js
             
 ```
 #### 安装依赖
@@ -120,3 +112,5 @@
 - http://localhost:3000/index.html
 - http://localhost:3000/pageA.html
 - .....
+
+#### webpack4配置悄悄改动中~~
