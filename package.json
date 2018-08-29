@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "node output && webpack-dev-server",
+    "build": "node output && webpack"
   },
   "author": "helti",
   "license": "MIT",
