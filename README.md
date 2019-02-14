@@ -11,6 +11,23 @@
 - 动态设置HtmlWebpackPlugin实现多页打包配置
 - 启动webpack-dev-server（自动刷新）
 
+### 增加打包配置文件 web.config.js
+
+```js
+/**
+ * 打包配置
+ * publicPath:根据运行环境设置  //  isDev ? "/" : "http://cdn.xx.com/"
+ * port http端口号
+ */
+
+let isDev = process.env.NODE_ENV == "development";
+
+module.exports = {
+  publicPath: isDev ? "/" : "/",
+  port: 3000 //dev模式下http端口号
+};
+```
+ 
 ### 页面配置规则
 > 保持html文件名与入口js文件名一致，使用glob模块，动态读取文件夹生成配置
 ```
@@ -113,4 +130,5 @@
 - http://localhost:3000/pageA.html
 - .....
 
-#### webpack4配置悄悄改动中~~
+#### webpack4
+[webpack4](https://github.com/HelTi/webpack-M-pages/tree/webpack4)
