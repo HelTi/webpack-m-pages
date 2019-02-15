@@ -17,8 +17,6 @@ pageArr.forEach(page => {
   chunksArr.push(page.chunks);
 });
 
-console.log("chunksArr", chunksArr);
-
 let base_plugin = [
   new CleanWebpackPlugin(["../dist"], {
     verbose: true,
@@ -26,7 +24,7 @@ let base_plugin = [
   }),
   new webpack.optimize.CommonsChunkPlugin({
     name: "vendors",
-    chunks: ["pageA", "pageB", "pageC"], //提取公用模块
+    chunks: chunksArr, //提取公用模块
     minChunks: Infinity
   }),
   /*js压缩*/
