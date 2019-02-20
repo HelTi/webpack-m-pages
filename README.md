@@ -2,7 +2,6 @@
 > 这个完全基于webpack的配置，适用于一些官网产品类介绍的静态网页。可以使用scss,es6，并实现代码压缩，css压缩
 >更新到webpack3
 
-## master分支不在更新，请移至webpack3分支
 ### 功能完成
  功能  
 - css压缩，scss编译
