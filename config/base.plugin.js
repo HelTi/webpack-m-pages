@@ -5,6 +5,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const ROOT_PATH = path.resolve(__dirname);
 
@@ -36,7 +37,8 @@ let base_plugin = [
     filename: "static/css/[name][hash].css",
     disable: false,
     allChunks: true
-  })
+  }),
+  new FriendlyErrorsWebpackPlugin()
 ];
 /*遍历页面，添加配置*/
 pageArr.forEach(page => {

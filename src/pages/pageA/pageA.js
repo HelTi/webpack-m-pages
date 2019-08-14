@@ -3,6 +3,7 @@
  */
 import("../../assets/css/pageA/a.css")
 import("../../assets/css/pageA/as.scss")
+import('./pageA.css')
 console.log('pagea');
 
 import m from '../../lib/test'

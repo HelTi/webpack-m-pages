@@ -1,6 +1,6 @@
 const webpack = require("webpack"); //
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin"); // 通过 npm 安装
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const utils = require("./config/utils");
 
@@ -43,7 +43,8 @@ module.exports = {
               options: {
                 minimize: true //css压缩
               }
-            }
+            },
+            "postcss-loader"
           ]
         })
       },
@@ -65,7 +66,8 @@ module.exports = {
                 outputStyle: "compressed",
                 sourceMap: true
               }
-            }
+            },
+            "postcss-loader"
           ]
         })
       },
@@ -97,6 +99,7 @@ module.exports = {
     host: "localhost",
     compress: true,
     port: port,
-    inline: true
+    inline: true,
+    quiet: true
   }
 };
