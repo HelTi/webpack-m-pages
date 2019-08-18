@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress",
-    "build": "cross-env NODE_ENV=production webpack --progress"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --disable-host-check --inline --progress --config config/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js --progress"
   },
   "author": "helti",
   "license": "MIT",
