@@ -6,7 +6,7 @@ const { port } = require('../web.config')
 module.exports = merge(common, {
   plugins: [new FriendlyErrorsWebpackPlugin()],
   devServer: {
-    contentBase: './',
+    contentBase: false,
     host: 'localhost',
     compress: true,
     port: port,

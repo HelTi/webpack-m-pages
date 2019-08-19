@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 const utils = require('./utils')
 const { isDev } = require('./env')
@@ -109,6 +110,13 @@ module.exports = {
       filename: 'static/css/[name].css?v=[hash]',
       disable: false,
       allChunks: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: 'static',
+        ignore: ['.*']
+      }
+    ])
   ].concat(...htmlWebpackPluginArr)
 }
