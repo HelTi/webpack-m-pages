@@ -1,8 +1,0 @@
-@import "../../../common/css/reset.css";
-p{
-    font-size: 12px;
-    color: green;
-}
-.bg{
-    background: url('../../img/ph.jpg');
-}
