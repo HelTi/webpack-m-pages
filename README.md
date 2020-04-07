@@ -1,4 +1,4 @@
-## 基于webpack的多页脚手架 for webpack3
+## 基于webpack的多页脚手架 for webpack4
 > 这个完全基于webpack的配置，适用于一些官网产品类介绍的静态网页。可以使用scss,es6，并实现代码压缩，css压缩
 >更新到webpack3
 
@@ -46,76 +46,7 @@ module.exports = {
 
 ### 目录结构说明
 ```
-│  .babelrc
-│  .gitignore
-│  .postcssrc.js
-│  getEntrys.js
-│  package-lock.json
-│  package.json
-│  README.md
-│  webpack.config.js
-│  
-├─config
-│      base.plugin.js //包含动态生成HtmlWebpackPlugin
-│      entrys.js  //动态入口与HtmlWebpackPlugin动态生成
-│      utils.js
-│      
-└─src
-    ├─assets
-    │  ├─css
-    │  │  │  bootstrap.css
-    │  │  │  index.scss
-    │  │  │  
-    │  │  ├─pageA
-    │  │  │      a.css
-    │  │  │      as.scss
-    │  │  │      
-    │  │  ├─pageB
-    │  │  │      b.css
-    │  │  │      bb.scss
-    │  │  │      
-    │  │  └─pageC
-    │  │          c.css
-    │  │          
-    │  ├─fonts
-    │  │      glyphicons-halflings-regular.eot
-    │  │      glyphicons-halflings-regular.svg
-    │  │      glyphicons-halflings-regular.ttf
-    │  │      glyphicons-halflings-regular.woff
-    │  │      glyphicons-halflings-regular.woff2
-    │  │      
-    │  └─img
-    │          ph.jpg
-    │          
-    ├─common
-    │  ├─css
-    │  │      reset.css
-    │  │      
-    │  └─js
-    │          common.js
-    │          
-    ├─js
-    │  │  testm.js
-    │  │  
-    │  └─other
-    │          a.js
-    │          b.js
-    │          
-    ├─lib
-    │      test.js
-    │      
-    └─pages //页面配置目录
-        ├─index
-        │      index.html
-        │      index.js
-        │      
-        ├─pageA
-        │      pageA.html
-        │      pageA.js
-        │      
-        └─pageB
-                pageB.html
-                pageB.js
+
             
 ```
 #### 安装依赖
@@ -128,6 +59,3 @@ module.exports = {
 - http://localhost:3000/index.html
 - http://localhost:3000/pageA.html
 - .....
-
-#### webpack4
-[webpack4](https://github.com/HelTi/webpack-M-pages/tree/webpack4)
