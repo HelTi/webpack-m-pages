@@ -1,15 +1,15 @@
-import './index.scss'
-console.log('index')
+import "./index.scss";
+console.log("index");
 
 const devMode = process.env.NODE_ENV != "production";
-console.log('devMode',devMode)
+console.log("devMode", devMode);
 
-function p(){
-    return new Promise((resolve,reject)=>{
-        resolve('success')
-    })
+function p() {
+  return new Promise((resolve) => {
+    resolve("success");
+  });
 }
 
-p().then(res=>{
-    console.log(res)
-})
+p().then((res) => {
+  console.log(res);
+});

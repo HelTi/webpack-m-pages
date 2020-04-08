@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --config ./config/webpack.prd.js",
-    "start": "webpack-dev-server --progress --config ./config/webpack.dev.js --open"
+    "start": "webpack-dev-server --progress --config ./config/webpack.dev.js --open",
+    "dev": "webpack-dev-server --progress --config ./config/webpack.dev.js --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@183.47.46.154:2222/zhuhuilong/webpack-m-pages.git"
+    "url": "https://github.com/HelTi/webpack-M-pages.git"
   },
-  "author": "",
+  "author": "helti",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -22,6 +24,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
     "express": "^4.17.1",
     "extract-loader": "^5.0.1",
     "file-loader": "^6.0.0",

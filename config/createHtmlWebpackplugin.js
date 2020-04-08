@@ -11,7 +11,7 @@ pages.forEach(page => {
       filename: page['filename'],
       template: page['template'],
       chuckName: page['chuckName'],
-      chunks: ['vendors', page['chunks']]
+      chunks: [page['chunks']]
     })
   )
 })
