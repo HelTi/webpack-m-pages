@@ -2,16 +2,14 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const utils = require('./utils')
-
 //获取所有入口文件配置
 const { entries } = require('./entrys')
 // 多页html
 const htmlWebpackPluginArr = require('./createHtmlWebpackPlugin')
-
 const devMode = process.env.NODE_ENV != 'production'
-console.log('devMode', devMode)
+const webConfig = require('../web.config')
 
-module.exports = {
+let config = {
   entry: entries(),
   output: {
     filename: 'static/js/[name].js?v=[hash]',
@@ -96,4 +94,16 @@ module.exports = {
     }),
     ...htmlWebpackPluginArr,
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  externals: {},
 }
+
+const { externals, alias } = webConfig
+config.resolve.alias = Object.assign(config.resolve.alias, alias)
+config.externals = Object.assign(config.externals, externals)
+console.log('config', config)
+module.exports = config

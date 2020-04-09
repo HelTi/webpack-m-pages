@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --progress --config ./config/webpack.prd.js",
-    "start": "webpack-dev-server --progress --config ./config/webpack.dev.js --open",
-    "dev": "webpack-dev-server --progress --config ./config/webpack.dev.js --open",
+    "build": "cross-env NODE_ENV=production webpack --progress --config ./config/webpack.prd.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --progress --config ./config/webpack.dev.js --open",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config ./config/webpack.dev.js --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js"
   },
@@ -23,6 +23,7 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "express": "^4.17.1",
@@ -47,6 +48,7 @@
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "vue": "^2.6.11"
   }
 }
