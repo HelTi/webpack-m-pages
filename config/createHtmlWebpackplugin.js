@@ -5,13 +5,13 @@ const pages = htmlPages()
 
 let htmlWebpackPluginArr = []
 
-pages.forEach(page => {
+pages.forEach((page) => {
   htmlWebpackPluginArr.push(
     new HtmlWebpackPlugin({
       filename: page['filename'],
       template: page['template'],
       chuckName: page['chuckName'],
-      chunks: [page['chunks']]
+      chunks: [page['chunks']],
     })
   )
 })

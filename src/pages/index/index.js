@@ -1,15 +1,19 @@
-import "./index.scss";
-console.log("index");
+/* eslint-disable no-new */
+import WaterMark from '../../utils/watermark'
+import './index.scss'
+new WaterMark({
+  text: 'webpack多页配置'
+})
 
-const devMode = process.env.NODE_ENV != "production";
-console.log("devMode", devMode);
+const devMode = process.env.NODE_ENV !== 'production'
+console.log('devMode', devMode)
 
 function p() {
   return new Promise((resolve) => {
-    resolve("success");
-  });
+    resolve('success')
+  })
 }
 
 p().then((res) => {
-  console.log(res);
-});
+  console.log(res)
+})
