@@ -105,5 +105,5 @@ let config = {
 const { externals, alias } = webConfig
 config.resolve.alias = Object.assign(config.resolve.alias, alias)
 config.externals = Object.assign(config.externals, externals)
-console.log('config', config)
+
 module.exports = config

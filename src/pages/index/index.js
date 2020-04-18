@@ -1,4 +1,3 @@
-/* eslint-disable no-new */
 import Vue from 'vue'
 import WaterMark from '../../utils/watermark'
 import './index.scss'
