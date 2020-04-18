@@ -1,15 +1,15 @@
 # webpack多页配置
 **当前webpack版本v4**
 ## 功能 
--[x] css压缩，scss编译  
--[x] 使用npm包  
--[x] js压缩  
--[x] 动态读取入口配置文件   
--[x] 动态设置HtmlWebpackPlugin实现多页打包配置
--[x] 启动webpack-dev-server（自动刷新）  
--[x] eslint校验  
--[ ] 动态cdn配置 （公共库使用cdn，也就是通过css标签和script标签引入，避免使用webpack打包，从而降低打包体积与访问速度）   
--[ ] web.config.js增加对webpack配置运行扩展
+- [x] css压缩，scss编译  
+- [x] 使用npm包  
+- [x] js压缩  
+- [x] 动态读取入口配置文件   
+- [x] 动态设置HtmlWebpackPlugin实现多页打包配置
+- [x] 启动webpack-dev-server（自动刷新）  
+- [x] eslint校验  
+- [] 动态cdn配置 （公共库使用cdn，也就是通过css标签和script标签引入，避免使用webpack打包，从而降低打包体积与访问速度）   
+- [] web.config.js增加对webpack配置运行扩展
 
 ## web.config.js配置文件
 参数|说明|类型|默认值
