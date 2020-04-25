@@ -18,7 +18,7 @@ publicPath|webpack的打包公共路径|string| /
 port|webpack-dev-server的端口号|number| 3000
 host|webpack-dev-server的服务host|string| localhost
 externals|webpack的externals|object| {}
-externals|webpack的externals|object| {}
+alias|webpack的alias|object| {}
  
 ## 页面路径规则
 **保持html文件名与入口js文件名一致，使用glob模块，动态读取文件夹生成配置**
