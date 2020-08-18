@@ -48,7 +48,7 @@
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vue": "^2.6.11"
   }
 }
